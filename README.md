@@ -22,3 +22,20 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+
+Phase 2
+
+* add email function send and recieve to employee & department manager
+	sendgrid.com references rails g mailer UserNotifier
+
+
+Phase 3 
+
+* add email function send and recieve to Admin & manager
+
+* Add chat function - send, view, recieve, status
+	private, general, department wide, project
+	checkout mad chatter gem
