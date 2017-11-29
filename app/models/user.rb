@@ -10,10 +10,11 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   has_many :tasks, through: :task_users
+  has_many :task_users
   has_many :projects, through: :user_projects
+  has_many :user_projects
 
-  belongs_to :department
-  belongs_to :project, through :user_projects
-  belongs_to :tasks, through :user_tasks
+  belongs_to :department, optional: :true
+
 
 end
