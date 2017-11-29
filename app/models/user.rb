@@ -9,12 +9,14 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
 
-  has_many :tasks, through: :task_users
   has_many :task_users
-  has_many :projects, through: :user_projects
+  has_many :tasks, through: :task_users
   has_many :user_projects
+  has_many :projects, through: :user_projects
 
   belongs_to :department, optional: :true
 
-
+  def name
+    self.first_name + " " + self.last_name
+  end
 end
