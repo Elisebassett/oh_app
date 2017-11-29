@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   resources :departments
 
   devise_for :users, controllers: {
-        registration: 'users/registration'
-      }
-  
-	root "home#index"
+    registrations: 'users/registrations'
+  }
 
-  resources :users, only: :show
+  resources :users, only: [:show]
+  root "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
