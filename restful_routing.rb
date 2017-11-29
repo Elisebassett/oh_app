@@ -1,5 +1,4 @@
-Oh, dear. Naughty, naughty! Rails knows what you typed 
-and she doesn't like it...
+Dag, yo. Your routes have seen better days.
 
 	from /Users/christi/.rvm/gems/ruby-2.4.2/gems/bundler-1.15.4/lib/bundler/spec_set.rb:81:in `map!'
 	from /Users/christi/.rvm/gems/ruby-2.4.2/gems/bundler-1.15.4/lib/bundler/spec_set.rb:81:in `materialize'
