@@ -9,7 +9,9 @@
             <div class="card-action">
             	<%= link_to "My Department" %>
             	<br>
-            	<%= link_to "User Dashboard" %>
+            	<%= link_to "Edit Department", edit_department_path(:id) %>
+            	<br>
+							<%= link_to "Destroy Department", department_path(:id), method: :delete %>
             </div>
           </div>
         </div>
@@ -41,3 +43,4 @@
           	</div>	
         	</div>
       </div>
+
