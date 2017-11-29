@@ -12,6 +12,8 @@ gem 'jquery-rails'
 
 gem 'materialize-sass'
 
+gem 'font-awesome-sass', '~> 4.7.0'
+
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
