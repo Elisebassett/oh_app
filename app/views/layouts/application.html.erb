@@ -9,13 +9,20 @@
   </head>
 
   <body>
-    <%= link_to "Login", new_user_session_path %>
-    <%= link_to "Sign up", new_user_registration_path %>
-    <%= link_to "Create Department", new_department_path %>
-    <%= link_to "Company Dashboard", departments_path %>
-    <%= link_to "Company Dashboard", department_path(:id) %>
-    <%= link_to "create project", new_project_path %>
-    <%= link_to "Company Dashboard", departments_path %>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if current_user %>
+          <li><%= link_to "Create Department", new_department_path %></li>
+          <li><%= link_to "Create project", new_project_path %></li>
+          <li><%= link_to "Company Dashboard", departments_path %></li>
+        <% end %>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+      </ul>
+    </div>
+  </nav>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
