@@ -10,13 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129181225) do
+ActiveRecord::Schema.define(version: 20171129184708) do
 
   create_table "departments", force: :cascade do |t|
     t.string "name"
     t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "deadline"
+    t.string "bonus_points"
+    t.string "completed"
+    t.integer "department_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["department_id"], name: "index_projects_on_department_id"
   end
 
   create_table "users", force: :cascade do |t|
