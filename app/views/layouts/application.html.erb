@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OhApp</title>
+    <title>Oh App</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <%= link_to "Login", new_user_session_path %>
+    <%= link_to "Sign up", new_user_registration_path %>
+    <%= link_to "Create Department", new_department_path %>
+    <%= link_to "create project", new_project_path %>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
