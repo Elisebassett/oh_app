@@ -1,7 +1,3 @@
 <h1>Departments#new</h1>
 <p>Find me in app/views/departments/new.html.erb</p>
-
-<%= form_with model: @department do |f| %>
-	<%= f.text_field :name %>
-	<%= f.submit %>
-<% end %>
+<%= render 'form' %>
