@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  project_id: 1
+  complete: false
+  deadline: 2017-11-29
+  points: 1
+
+two:
+  name: MyString
+  description: MyString
+  project_id: 1
+  complete: false
+  deadline: 2017-11-29
+  points: 1
