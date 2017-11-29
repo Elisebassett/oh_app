@@ -7,9 +7,6 @@ class User < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 
-	 # belongs_to :project, through :user_projects
-   # belongs_to :tasks, through :user_tasks
-   # belongs_to :department
 
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
@@ -18,5 +15,7 @@ class User < ApplicationRecord
   has_many :projects, through: :user_projects
 
   belongs_to :department
+  belongs_to :project, through :user_projects
+  belongs_to :tasks, through :user_tasks
 
 end
