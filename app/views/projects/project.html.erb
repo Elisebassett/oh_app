@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col s6 m6">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><%= project.name %></span>
+         <% project.tasks.all.each do |task| %>
+           <div class="collection">
+              <%= link_to task.name, project, class: "collection-item" %>
+            </div>
+         <% end %>
+      </div>
+      <div class="card-action">
+        <%= link_to "Edit", edit_project_path(project) %>
+        <%= link_to "Delete", project_path(project), method: :destroy %>
+      </div>
+    </div>
+  </div>
+</div>
