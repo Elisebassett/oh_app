@@ -21,12 +21,18 @@ class DepartmentsController < ApplicationController
   end
 
   def update
-    @department = Department.update(department_params)
+    @department = Department.find(params[:id])
+    @department.update(department_params)
+
     redirect_to @department
   end
 
   def destroy
-    Department.find(params[:id]).destroy
+
+    @department = Department.find(params[:id]).destroy
+    respond_to do |format|
+      format.html {redirect_to departments_path}
+    end
   end
 
   private
