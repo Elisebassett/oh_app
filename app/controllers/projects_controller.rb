@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id]).destroy
       # format.js
       # format.html{redirect_to @projects}
-    end
+    # end
   end
 
   private
