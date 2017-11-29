@@ -7,15 +7,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <%= link_to "Login", new_user_session_path %>
     <%= link_to "Sign up", new_user_registration_path %>
     <%= link_to "Create Department", new_department_path %>
       <%= link_to "Company Dashboard", departments_path %>
-       <%= link_to "Company Dashboard", department_path(:id) %>
+       <%= link_to "Department Dashboard", department_path(:id) %>
     <%= link_to "create project", new_project_path %>
     <%= link_to "Company Dashboard", departments_path %>
+     <%= link_to "Projects Dashboard", project_path(:id) %>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
