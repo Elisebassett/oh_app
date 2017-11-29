@@ -48,3 +48,4 @@ cancel_user_registration GET    /users/cancel(.:format)           users/registra
                          DELETE /projects/:id(.:format)           projects#destroy
                     user GET    /users/:id(.:format)              users#show
                     root GET    /                                 home#index
+
