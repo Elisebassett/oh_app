@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20171129205413) do
 
+
   create_table "departments", force: :cascade do |t|
     t.string "name"
     t.integer "points"

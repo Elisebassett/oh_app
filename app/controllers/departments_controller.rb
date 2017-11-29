@@ -1,5 +1,6 @@
 class DepartmentsController < ApplicationController
   def index
+    @department = Department.all
   end
 
   def show
@@ -22,10 +23,12 @@ class DepartmentsController < ApplicationController
   def update
     @department = Department.find(params[:id])
     @department.update(department_params)
+
     redirect_to @department
   end
 
   def destroy
+
     @department = Department.find(params[:id]).destroy
     respond_to do |format|
       format.html {redirect_to departments_path}
