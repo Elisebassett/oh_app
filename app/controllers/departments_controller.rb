@@ -11,8 +11,8 @@ class DepartmentsController < ApplicationController
   end
 
   def create
-    Department.create(department_params)
-    redirect_to department_path
+    @department = Department.create(department_params)
+    redirect_to @department
   end
 
   def edit
