@@ -7,6 +7,14 @@
                          PATCH  /departments/:id(.:format)      departments#update
                          PUT    /departments/:id(.:format)      departments#update
                          DELETE /departments/:id(.:format)      departments#destroy
+                projects GET    /projects(.:format)             projects#index
+                         POST   /projects(.:format)             projects#create
+             new_project GET    /projects/new(.:format)         projects#new
+            edit_project GET    /projects/:id/edit(.:format)    projects#edit
+                 project GET    /projects/:id(.:format)         projects#show
+                         PATCH  /projects/:id(.:format)         projects#update
+                         PUT    /projects/:id(.:format)         projects#update
+                         DELETE /projects/:id(.:format)         projects#destroy
         new_user_session GET    /users/sign_in(.:format)        devise/sessions#new
             user_session POST   /users/sign_in(.:format)        devise/sessions#create
     destroy_user_session DELETE /users/sign_out(.:format)       devise/sessions#destroy
