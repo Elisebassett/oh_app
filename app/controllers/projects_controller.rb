@@ -1,15 +1,18 @@
 class ProjectsController < ApplicationController
   def index
-    @project = Project.all
+    @projects = Project.all
   end
 
   def new
+    @department =
     @project = Project.new
   end
 
   def create
     @project = Project.create(project_params)
-    redirect_to @project
+    if @project.save!
+      redirect_to @project
+    end
   end
 
   def show
@@ -39,7 +42,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :department_id, :deadline, :bonus_points, :completed, :avatar)
+    params.require(:project).permit(:department_id, :name, :description, :deadline)
   end
 
 end
