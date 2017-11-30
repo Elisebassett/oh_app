@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'simple_form'
+
 gem 'paperclip', '~> 5.0.0'
 
 gem 'jquery-rails'
