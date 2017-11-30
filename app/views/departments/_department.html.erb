@@ -3,13 +3,12 @@
     <span class="card-title"><%= department.name %></span>
      <% department.projects.all.each do |project| %>
        <div class="collection">
-          <li><%= link_to project.name, project, class: "collection-item" %></li>
+          <%= link_to project.name, project, class: "collection-item" %>
         </div>
      <% end %>
   </div>
   <div class="card-action">
     <%= link_to "Edit", edit_department_path(:id) %>
-    <br>
-    <%= link_to "Delete", department_path(:id), method: :destroy%>
+    <%= link_to "Delete", department_path(:id), method: :destroy, class: "float_right"%>
   </div>
 </div>

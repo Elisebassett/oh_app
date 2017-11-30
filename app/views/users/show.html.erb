@@ -9,28 +9,40 @@
       <div class="card-action">
       	<%= link_to "Edit account", edit_user_registration_path %>
       	<br>
-      	
       </div>
     </div>
-  </div>
-  <div class="col s12 m6">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">Project</span>
-        <div class="row display">
-          <% @user.projects.each do |project| %>
-            <%= render project %>
-          <% end %>
+  </div> <!-- end of column -->
+    <div class="col s6 ">
+      <div class="card blue-grey darken-1">
+        <div class="card-content black-text">
+          <span class="card-title">My Projects</span>
+            <% @projects.each do |project| %>
+              <%= render project %>
+            <% end %>
+          <div class="row">
+            <div class="card white">
+              <div class="card-content black-text">
+              <span class="card-title"><%= @projects.name %></span>
+                <% @tasks.each do |task| %>
+                  <%= render tasks %>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col s12 m3">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">Tasks</span>
-        <p>list tasks</p>
+    <div class="col s12 m3">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">My Tasks</span>
+            <% @tasks.each do |task| %>
+              <li><%= render tasks %>
+            <% end %>
+            <%= form_with model: @task do |f| %>
+              <%= f.button "completed"   %>
+           <% end  %>
+        </div>
       </div>
-    	</div>	
-  	</div>
+    </div>
 </div>
