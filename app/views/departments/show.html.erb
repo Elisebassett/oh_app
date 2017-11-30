@@ -59,11 +59,14 @@
         	<span class="card-title">Employees</span>
           <ul class="collapsible" data-collapsible="accordion">
         	 <% @users.each do |user| %>
-              <div class="collapsible-header black-text"><%= user.name %></div>
+              <div class="collapsible-header black-text"><%= user.name %>
+              </div>
               <div class="collapsible-body"><span>
               <p>Assign to Department</p></span>
+            </div>
           </ul>
       	</div>
     	</div>	
   	</div>
+  </div>
 </div>
