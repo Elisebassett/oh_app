@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @tasks = Task.all
     @project = Project.all
     @project = Job.find(params[:id])
   end

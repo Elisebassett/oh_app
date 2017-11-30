@@ -4,13 +4,12 @@
         <span class="card-title"><%= project.name %></span>
          <% project.tasks.all.each do |task| %>
            <div class="collection">
-              <%= link_to task.name, task, class: "collection-item" %>
+             <li> <%= link_to task.name, task, class: "collection-item" %><li>
             </div>
          <% end %>
       </div>
       <div class="card-action">
         <%= link_to "Edit", edit_project_path(project) %>
-        <br>
         <%= link_to "Delete", project_path(project), method: :destroy %>
       </div>
     </div>
