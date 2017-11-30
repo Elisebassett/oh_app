@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
+
   end
 
   def new
@@ -19,6 +20,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     @project = Project.find(params[:id])
     @tasks = Task.all
+    @users = User.all
   end
 
   def edit
