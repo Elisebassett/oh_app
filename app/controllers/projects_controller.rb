@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
   def show
     @projects = Project.all
     @project = Project.find(params[:id])
-    @tasks = Task.all
+    @tasks = @project.tasks.all
     @users = User.all
   end
 
