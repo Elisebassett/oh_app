@@ -5,17 +5,9 @@
   <a href="#!" class="collection-item">Alvin</a>
 </div>
 
+  <%= link_to "Some Page", some_path %>
+</div>
 
-	<div class="col s6">
-      <div class="card-content">
-        <span class="card-title"><%= project.name %></span>
-         <% project.tasks.each do |task| %>
-           <div class="collection">
-              <li><%= link_to task.name, task, class: "collection-item" %></li>
-            </div>
-         <% end %>
-      </div>
-      <div class="card-action">
         <%= link_to "Edit", edit_project_path(project) %>
         <%= link_to "Delete", project_path(project), method: :destroy, class: "float_right" %>
       </div>
