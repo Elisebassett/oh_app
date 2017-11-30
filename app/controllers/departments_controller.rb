@@ -32,7 +32,6 @@ class DepartmentsController < ApplicationController
   end
 
   def destroy
-
     @department = Department.find(params[:id]).destroy
     respond_to do |format|
       format.html {redirect_to departments_path}
