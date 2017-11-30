@@ -1,10 +1,12 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
+
   end
 
   def new
     @project = Project.new
+    @project_new = Project.new
   end
 
   def create
@@ -15,8 +17,10 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.all
+    @projects = Project.all
     @project = Project.find(params[:id])
+    @tasks = Task.all
+    @users = User.all
   end
 
   def edit
@@ -41,7 +45,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:department_id, :name, :description, :deadline)
+    params.require(:project).permit(:department_id, :name, :description, :deadline, :id)
   end
 
 end
