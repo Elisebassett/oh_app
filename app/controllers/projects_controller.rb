@@ -4,7 +4,6 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @department =
     @project = Project.new
   end
 
@@ -16,8 +15,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.all
-    @project = Job.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   def edit
