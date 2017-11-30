@@ -7,8 +7,9 @@ class DepartmentsController < ApplicationController
 
   def show
     @department = Department.find(params[:id])
-    @project = Project.all
+    @projects = @department.projects.all
     @project_new = Project.new
+    @users = User.all
   end
 
   def new

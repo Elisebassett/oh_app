@@ -21,12 +21,9 @@
           <span class="card-title white-text">Tasks</span>
           <div class="row">
             <% @tasks.each do |task| %>
-              <%= render tasks %>
-            <% end %>
-          </div>
-            <% @project.tasks.each do |task| %>
               <%= render task %>
             <% end %>
+          </div>
         </div>
       </div>
     </div>
