@@ -20,9 +20,11 @@
         <div class="card-content black-text">
           <span class="card-title white-text">Tasks</span>
           <div class="row">
-            <% @project.tasks.each do |task| %>
-              <%= render task %>
-            <% end %>
+            <ul class="collapsible" data-collapsible="accordion">
+              <% @tasks.each do |task| %>
+                <%= render task %>
+              <% end %>
+            </ul>
           </div>
         </div>
       </div>
@@ -34,7 +36,7 @@
               add validations for manager
         <p>Manager: <%# user.name %></p>
       </div>
-      <div class="card blue-grey darken-1">
+            <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">Employees</span>
           <ul class="collapsible" data-collapsible="accordion">
@@ -48,6 +50,6 @@
             <% end %>
           </ul>
         </div>
-      </div>
-    </div>
+      </div>  
+  </div>
 </div>
