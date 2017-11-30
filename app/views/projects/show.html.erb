@@ -8,19 +8,20 @@
           <p><%= @project.deadline %></p>
         </div>
         <div class="card-action">
-          <%= link_to "Create Tasks", new_task_path %>
+          <%= link_to "Create Task", '#modal1', class: "waves-effect waves-light btn modal-trigger" %>
           <br>
           <%= link_to "Edit Tasks", task_path(:id) %>
         </div>
       </div>
     </div>
+    <%= render 'modal' %>
     <div class="col s12 m6">
       <div class="card blue-grey darken-1">
         <div class="card-content black-text">
-          <span class="card-title white-text">Projects</span>
+          <span class="card-title white-text">Tasks</span>
           <div class="row">
-            <% @projects.each do |project| %>
-              <%= render project %>
+            <% @tasks.each do |task| %>
+              <%= render tasks %>
             <% end %>
           </div>
             <% @project.tasks.each do |task| %>
