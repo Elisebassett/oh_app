@@ -1,14 +1,9 @@
-<div class="collection">
-  <a href="#!" class="collection-item">Alvin</a>
-  <a href="#!" class="collection-item active">Alvin</a>
-  <a href="#!" class="collection-item">Alvin</a>
-  <a href="#!" class="collection-item">Alvin</a>
-</div>
+<!-- this must be wrapped in: <ul class="collapsible" data-collapsible="accordion"></ul> -->
 
-  <%= link_to "Some Page", some_path %>
-</div>
-
-        <%= link_to "Edit", edit_project_path(project) %>
-        <%= link_to "Delete", project_path(project), method: :destroy, class: "float_right" %>
-      </div>
-    </div>
+<li>
+  <div class="collapsible-header"><%= task.name %></div>
+  <div class="collapsible-body"><span>
+    <p>task.description</p>
+    <p>task.deadline</p>
+  </span></div>
+</li>
