@@ -4,8 +4,8 @@
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
         <span class="card-title">Project: <%= @project.name %></span>
-          <p><%= @project.description %></p>
-          <p><%= @project.deadline %></p>
+          <p><%# @project.description %></p>
+          <p><%# @project.deadline %></p>
       <div class="card-action">
       	<%= link_to "Create Project", '#modal1', class: "waves-effect waves-light btn modal-trigger" %>
       	<br>
@@ -24,8 +24,8 @@
           <% end %>
         </div>
          <% @project.tasks.each do |task| %>
-              <%= render task %>
-            <% end %>
+          <%= render task %>
+         <% end %>
       </div>
     </div>
   </div>
@@ -40,11 +40,15 @@
         	<span class="card-title">Employees</span>
           <ul class="collapsible" data-collapsible="accordion">
         	 <% @users.each do |user| %>
-              <div class="collapsible-header black-text"><%= user.name %></div>
+              <div class="collapsible-header black-text"><%= user.name %>
+                <% end %>
               <div class="collapsible-body"><span>
               <p>Assign to Department</p></span>
+            </div>
           </ul>
-      	</div>
-    	</div>	
-  	</div>
+        </div>
+      </div>
+    </div>	
+  </div>
+</div>
 </div>
