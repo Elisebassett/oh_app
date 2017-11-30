@@ -2,6 +2,7 @@ class DepartmentsController < ApplicationController
   
   def index
     @departments = Department.all
+    @users = User.all
   end
 
   def show

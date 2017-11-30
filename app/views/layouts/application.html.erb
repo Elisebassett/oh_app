@@ -11,15 +11,18 @@
   <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="/" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if current_user %>
           <li><%= link_to "Create Department", new_department_path %></li>
           <li><%= link_to "Create project", new_project_path %></li>
           <li><%= link_to "Company Dashboard", departments_path %></li>
-        <% end %>
+          <li><%= link_to "Edit User", edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
         <li><%= link_to "Login", new_user_session_path %></li>
         <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <% end %>
       </ul>
     </div>
   </nav>
