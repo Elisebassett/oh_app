@@ -35,11 +35,11 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    # respond_to do |format|
+    respond_to do |format|
       @project = Project.find(params[:id]).destroy
-      # format.js
+      format.js
       # format.html{redirect_to @projects}
-    # end
+    end
   end
 
   private

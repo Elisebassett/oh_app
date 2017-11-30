@@ -1,8 +1,14 @@
 <!-- this must be wrapped in: <ul class="collapsible" data-collapsible="accordion"></ul> -->
-<li>
-  <div class="collapsible-header"><%= task.name %></div>
-  <div class="collapsible-body"><span>
-    <p>task.description</p>
-    <p>task.deadline</p>
-  </span></div>
+<li  class="tasks">
+  <div class="collapsible-header"><%= task.name %>
+  </div>
+  	<div class="collapsible-body"><span>
+	    <p>task.description</p>
+	    <p>task.deadline</p>
+	  	</span>
+	   	<div class="card-action">
+		    <%= link_to "Edit", edit_task_path(:id) %>
+		    <%= link_to "Delete", tasks_path(:id), method: :destroy, remote: :true, class: "float_right destroy_task"%>
+	  	</div>
+		</div>
 </li>
