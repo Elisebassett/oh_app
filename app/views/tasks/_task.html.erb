@@ -1,3 +1,14 @@
+<!-- this must be wrapped in: <ul class="collapsible" data-collapsible="accordion"></ul> -->
+
+<li id="task-<%= task.id %>" data-complete="<%= task.complete %>" data-id="<%= task.id %>" class="task_container">
+  <div class="collapsible-header">
+  	<%= task.name %>
+  	<div class="switch">
+    <label>
+      <input type="checkbox" <%= (task.complete ? 'checked' : '') %>>
+      <span class="lever"></span>
+      Complete
+    </label>
 
  <!-- <div class="col s6 card tasks">
   <div class="card-content"> -->  
@@ -22,5 +33,5 @@
             <%= link_to "Edit", edit_task_path(task) %>
             <%= link_to "Delete", task, method: :delete, remote: :true, class: "destroy_task float_right" %>
           <%# end %>
-  </div>
+        </div>
       </li>
