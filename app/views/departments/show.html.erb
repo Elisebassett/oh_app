@@ -15,6 +15,8 @@
           <%= link_to "Create Project", '#modal1', class: "waves-effect waves-light btn modal-trigger" %>
           <br>
           <%= link_to "Edit Project", edit_project_path(:id) %>
+          <br>
+          <%= link_to "Delete", @project, method: :delete, remote: :true, class: "destroy_project" %>
         </div>
       </div>
     </div>
