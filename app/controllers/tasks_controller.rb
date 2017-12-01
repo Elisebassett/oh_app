@@ -15,13 +15,13 @@ class TasksController < ApplicationController
     respond_to do |format|
       @task = Task.find(params[:id]).destroy
       format.js
-      # format.html{redirect_to @projects}
+      format.html{redirect_to @projects}
     end
   end
 
   private
 
   def task_params
-    params.require(:task).permit(:project_id, :name, :description, :deadline)
+    params.require(:task).permit(:project_id, :name, :description, :deadline, :id)
   end
 end
