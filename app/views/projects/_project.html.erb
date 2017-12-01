@@ -9,7 +9,7 @@
       <% end %>
   </div>
   <div class="card-action">
-      <%= link_to "Edit", edit_project_path(:id) %>
+      <%= link_to "Edit", edit_project_path(project) %>
       <%= link_to "Delete", project, method: :delete, remote: :true, class: "destroy_project float_right" %>
   </div>
 </div>

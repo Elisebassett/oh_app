@@ -1,20 +1,24 @@
-<!-- this must be wrapped in: <ul class="collapsible" data-collapsible="accordion"></ul> -->
-<li>
-  <div class="collapsible-header">
-  	<%= task.name %>
-  	<div class="switch">
-    <label>
-      
-      <input type="checkbox">
-      <span class="lever"></span>
-      Complete
-    </label>
+
+ <!-- <div class="col s6 card tasks">
+  <div class="card-content"> -->  
+      <li class="tasks">
+        <div class="collapsible-header">
+        	<%= task.name %>
+        	<div class="switch">
+          <label>
+            <input type="checkbox">
+            <span class="lever"></span>
+            Complete
+          </label>
+        </div>
+        </div>
+        <div class="collapsible-body">
+        	<span>
+          	<p><%= task.description %></p>
+          	<p><%= task.deadline %></p>
+        	</span>
+      	</div><div class="card-action">
+      <%= link_to "Edit", edit_task_path(task) %>
+      <%= link_to "Delete", task, method: :delete, remote: :true, class: "destroy_task float_right" %>
   </div>
-  </div>
-  <div class="collapsible-body">
-  	<span>
-    	<p><%= task.description %></p>
-    	<p><%= task.deadline %></p>
-  	</span>
-	</div>
-</li>
+      </li>
