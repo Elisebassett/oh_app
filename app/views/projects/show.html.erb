@@ -14,9 +14,15 @@
             <p><%= @project.deadline %></p>
           </div>
           <div class="card-action">
-            <%= link_to "Create Task", '#modal1', class: "waves-effect waves-light btn modal-trigger" %>
+            <span class="card-title">Project Info</span>
             <br>
-            <%= link_to "Edit Tasks", task_path(:id) %>
+            <%= link_to @department.name, department_path(@department) %>
+            <br>
+            <span class="card-title">Project Actions</span>
+            <br>
+            <%= link_to "Create Task", '#modal1', class: "modal-trigger" %>
+            <br>
+            <%= link_to "Edit Project", project_path %>
           </div>
         </div>
       </div>
