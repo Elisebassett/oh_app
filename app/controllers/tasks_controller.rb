@@ -2,9 +2,11 @@ class TasksController < ApplicationController
 
 
   def create
-  	@task = Task.new(task_params)
-  		if @task.save
+    respond_to do |format|
+  	 @task = Task.new(task_params)
+  		  if @task.save
   		end
+    end
   end
 
   def update
@@ -29,6 +31,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:project_id, :name, :description, :deadline, :complete, :task_id)
+    params.require(:task).permit(:project_id, :name, :description, :deadline, :complete, :task_id, :points)
   end
 end
