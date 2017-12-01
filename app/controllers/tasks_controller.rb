@@ -12,7 +12,11 @@ class TasksController < ApplicationController
   end
 
   def destroy
-  
+    respond_to do |format|
+      @task = Task.find(params[:id]).destroy
+      format.js
+      # format.html{redirect_to @projects}
+    end
   end
 
   private
