@@ -1,7 +1,7 @@
 class DepartmentsController < ApplicationController
   
   def index
-    @departments = Department.all
+    @departments = Department.includes(:projects).references(:projects).all
     @users = User.all
   end
 
