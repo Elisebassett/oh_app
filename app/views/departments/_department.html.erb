@@ -4,11 +4,12 @@
      <% department.projects.all.each do |project| %>
        <div class="collection">
           <%= link_to project.name, project, class: "collection-item" %>
+          <%= link_to "delete Project" %>
         </div>
      <% end %>
   </div>
   <div class="card-action">
     <%= link_to "Edit", edit_department_path(:id) %>
-    <%= link_to "Delete", departments_path(:id), method: :destroy, remote: :true, class: "float_right destroy_d"%>
+    <%= link_to "Delete", department, method: :delete, remote: :true, class: "float_right destroy_d"%>
   </div>
 </div>

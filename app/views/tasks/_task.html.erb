@@ -8,7 +8,7 @@
 	  	</span>
 	   	<div class="card-action">
 		    <%= link_to "Edit", edit_task_path(:id) %>
-		    <%= link_to "Delete", tasks_path(:id), method: :destroy, remote: :true, class: "float_right destroy_task"%>
+		    <%= link_to "Delete", task, method: :delete, remote: :true, class: "float_right destroy_task"%>
 	  	</div>
 		</div>
 </li>
