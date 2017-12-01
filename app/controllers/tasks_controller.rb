@@ -3,6 +3,12 @@ class TasksController < ApplicationController
 
   def create
   	@task = Task.new(task_params)
+    user_ids = params[:task][:user_ids]
+    user_ids.each do |user_id|
+      if !user_id.blank? 
+        @task.users << User.find(user_id)
+      else
+      end
   		if @task.save
   		end
   end
