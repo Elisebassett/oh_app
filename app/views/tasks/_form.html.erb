@@ -1,6 +1,7 @@
-<%= form_with model: Task.new do |f| %>
+<%= form_with model: Task.new, class: 'new_task' do |f| %>
 	<%= f.hidden_field :project_id, value: @project.id %>
 	<%= f.text_field :name, placeholder: :name %>
+	<%= f.hidden_field :points, value: 10 %>
 	<%= f.text_field :description, placeholder: :description %>
 	<%= f.date_field :deadline, placeholder: :deadline %>
 	<%= f.submit class: "modal-close" %>
