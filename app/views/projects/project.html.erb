@@ -5,7 +5,7 @@
         <span class="card-title"><%= project.name %></span>
          <% project.tasks.all.each do |task| %>
            <div class="collection">
-              <%= link_to task.name, project, class: "collection-item" %>
+              <%= link_to task.name, project, class: "collection-item task-#{task.id}" %>
             </div>
          <% end %>
       </div>
