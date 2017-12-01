@@ -24,6 +24,7 @@ class DepartmentsController < ApplicationController
 
   def edit
     @department = Department.find(params[:id])
+    redirect_to @department
   end
 
   def update
@@ -36,6 +37,7 @@ class DepartmentsController < ApplicationController
   def destroy
     @department = Department.find(params[:id]).destroy
     respond_to do |format|
+      format.js
       format.html {redirect_to departments_path}
     end
   end
@@ -43,6 +45,6 @@ class DepartmentsController < ApplicationController
   private
 
   def department_params
-    params.require(:department).permit(:name)
+    params.require(:department).permit(:name, :id)
   end
 end

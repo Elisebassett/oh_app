@@ -15,11 +15,11 @@
           <p class="card-title white-text">Actions</p>
           <%= link_to "New Department", new_department_path %>
           <p class="card-title white-text">Departments</p>
-          <div class="collection">
+          <div class="collection department">
             <% @departments.each do |department| %>
-              <%= link_to department.name , department_path(department), class: "collection-item" %>
+              <%= link_to department.name , department_path(department), class: "collection-item department-#{department.id} " %>
             <% end %>
-          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -57,3 +57,4 @@
     </div>
   </div>
 </div>
+

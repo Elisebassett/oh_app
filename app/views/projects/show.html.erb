@@ -1,5 +1,3 @@
-
-<div class="container-fluid">
   <div class="row">
     <div class="col">
       <h1><%= @project.name %> Dashboard</h1>
@@ -12,6 +10,9 @@
             <span class="card-title">Project: <%= @project.name %></span>
             <p><%= @project.description %></p>
             <p><%= @project.deadline %></p>
+            <%= link_to "Edit Project", edit_project_path(:id) %>
+            <br>
+             <%= link_to "Delete", @project, method: :delete, remote: :true, class: "destroy_project" %>
           </div>
           <div class="card-action">
             <span class="card-title">Project Info</span>
@@ -25,30 +26,31 @@
             <%= link_to "Edit Project", project_path %>
           </div>
         </div>
-      </div>
+      </div> <!-- end of column -->
       <%= render 'modal' %>
+      <!-- start of displaying tasks -->
       <div class="col s12 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content black-text">
             <span class="card-title white-text">Tasks</span>
             <div class="row">
-              <ul class="collapsible" data-collapsible="accordion">
-                <% @tasks.each do |task| %>
-                  <%= render task %>
-                <% end %>
-              </ul>
+                <ul class="collapsible" data-collapsible="accordion">
+                  <% @tasks.each do |task| %>
+                    <%= render task %>
+                  <% end %>
+                </ul>
             </div>
           </div>
         </div>
-      </div>
+      </div> <!-- end of column -->
       <div class="col s12 m3">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Team</span>
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">Team</span>
                 add validations for manager
-          <p>Manager: <%# user.name %></p>
-        </div>
-              <div class="card blue-grey darken-1">
+            <p>Manager: <%# user.name %></p>
+          </div>
+        <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <span class="card-title">Employees</span>
             <ul class="collapsible" data-collapsible="accordion">
@@ -65,4 +67,4 @@
         </div>  
     </div>
   </div>
-</div>
+</div> <!-- end of row -->

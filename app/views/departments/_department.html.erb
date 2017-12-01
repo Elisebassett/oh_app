@@ -1,14 +1,15 @@
-<div class="card col s6">
+<div class="card col s6 department department-<%= department.id %>">
   <div class="card-content">
     <span class="card-title"><%= department.name %></span>
      <% department.projects.all.each do |project| %>
        <div class="collection">
           <%= link_to project.name, project, class: "collection-item" %>
+          <%= link_to "Delete", project, method: :delete, remote: :true, class: "destroy_project float_right" %>
         </div>
      <% end %>
   </div>
   <div class="card-action">
-    <%= link_to "Edit", edit_department_path(:id) %>
-    <%= link_to "Delete", department_path(:id), method: :destroy, class: "float_right"%>
+    <%= link_to "Edit", edit_department_path(department) %>
+    <%= link_to "Delete", department, method: :delete, remote: :true, class: "float_right destroy_d"%>
   </div>
 </div>
