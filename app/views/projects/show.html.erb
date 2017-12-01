@@ -12,7 +12,7 @@
             <p><%= @project.deadline %></p>
             <%= link_to "Edit Project", edit_project_path(:id) %>
             <br>
-             <%= link_to "Delete", @project, method: :delete, remote: :true, class: "destroy_project" %>
+             <%= link_to "Delete", @project, method: :delete, class: "destroy_project" %>
           </div>
           <div class="card-action">
             <span class="card-title">Project Info</span>
