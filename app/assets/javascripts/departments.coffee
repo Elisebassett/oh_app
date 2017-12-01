@@ -2,4 +2,7 @@
 
 		$('.destroy_d').on 'ajax:success', ->
 			# console.log('worked')
-			$(this).closest('.department').remove()
+			$('.' + window.department_section).remove()
+
+		$('.destroy_d').on 'click', ->
+			window.department_section = $(this).closest('.department').attr('class').split(' ')[4]
