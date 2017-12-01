@@ -10,20 +10,20 @@
             <span class="card-title">Project: <%= @project.name %></span>
             <p><%= @project.description %></p>
             <p><%= @project.deadline %></p>
+            <br>
             <%= link_to "Edit Project", edit_project_path(:id) %>
             <br>
              <%= link_to "Delete", @project, method: :delete, class: "destroy_project" %>
           </div>
           <div class="card-action">
-            <span class="card-title">Project Info</span>
+            <span class="card-title">Department</span>
             <br>
             <%= link_to @department.name, department_path(@department) %>
             <br>
+            <br>  
             <span class="card-title">Project Actions</span>
             <br>
-            <%= link_to "Create Task", '#new-project-modal', class: "modal-trigger" %>
-            <br>
-            <%= link_to "Edit Project", project_path %>
+            <%= link_to "Create Task", '#new-project-modal', class: "modal-trigger" %> 
           </div>
         </div>
       </div> <!-- end of column -->
