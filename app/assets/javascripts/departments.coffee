@@ -6,3 +6,4 @@
 
 		$('.destroy_d').on 'click', ->
 			window.department_section = $(this).closest('.department').attr('class').split(' ')[4]
+				# this allows the same department in the list to the left to be removed when department is deleted
