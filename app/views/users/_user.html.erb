@@ -3,12 +3,6 @@
 	  <%= user.name %>
 	</div>
 	<div class="collapsible-body">
-	  <span><p>Assign to Department</p></span>
-	  <%= form_with model: @assign_to_project, class: "booking_form" do |f| %>
-			<%= f.hidden_field :user_id, value: user.id %>
-			<%= f.select :department_id, Department.all, prompt: "Select a Current Origin", class: "job_edit_field col s12 input-field"%> <!-- Not Finished -->
-				
-			<%= f.submit 'Assign User', class: 'btn waves-effect waves-light' %>
-		<% end %><!-- form -->
+	  
 	</div>
 </li>

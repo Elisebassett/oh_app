@@ -28,7 +28,6 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @tasks = @project.tasks.all
     @users = User.all
-    @assign_to_project = UserProject.new
     @department = @project.department
   end
 
