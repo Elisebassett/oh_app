@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
-
   end
 
   def new
@@ -10,7 +9,15 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    @users = User.all
     @project = Project.create(project_params)
+    user_ids = params[:project][:user_ids]
+    user_ids.each do |user_id|
+      if !user_id.blank? 
+        @project.users << User.find(user_id)
+      else
+      end
+    end
     if @project.save!
       redirect_to @project
     end
@@ -21,6 +28,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @tasks = @project.tasks.all
     @users = User.all
+    @assign_to_project = UserProject.new
+    @department = @project.department
   end
 
   def edit
@@ -45,7 +54,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:department_id, :name, :description, :deadline, :id)
+    params.require(:project).permit(:department_id, :name, :description, :deadline, :id, :user_ids)
   end
 
 end

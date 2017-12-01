@@ -15,11 +15,15 @@
              <%= link_to "Delete", @project, method: :delete, remote: :true, class: "destroy_project" %>
           </div>
           <div class="card-action">
-            <%= link_to "Create Task", '#new-project-modal', class: "waves-effect waves-light btn modal-trigger" %>
+            <span class="card-title">Project Info</span>
             <br>
-       <!--      <%= link_to "Edit Task", task_path(:id) %>
-             <br> -->
-            <%# link_to "Delete Task"  @task method: :delete, remote: :true, class: "destroy_task" %>
+            <%= link_to @department.name, department_path(@department) %>
+            <br>
+            <span class="card-title">Project Actions</span>
+            <br>
+            <%= link_to "Create Task", '#modal1', class: "modal-trigger" %>
+            <br>
+            <%= link_to "Edit Project", project_path %>
           </div>
         </div>
       </div> <!-- end of column -->
