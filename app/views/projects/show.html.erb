@@ -17,7 +17,7 @@
              <%= link_to "Delete", @project, method: :delete, remote: :true, class: "destroy_project" %>
           </div>
           <div class="card-action">
-            <%= link_to "Create Task", '#modal1', class: "waves-effect waves-light btn modal-trigger" %>
+            <%= link_to "Create Task", '#new-project-modal', class: "waves-effect waves-light btn modal-trigger" %>
             <br>
             <%= link_to "Edit Tasks", task_path(:id) %>
           </div>

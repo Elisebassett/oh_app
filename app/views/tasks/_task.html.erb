@@ -1,11 +1,11 @@
 <!-- this must be wrapped in: <ul class="collapsible" data-collapsible="accordion"></ul> -->
-<li>
+
+<li id="task-<%= task.id %>" data-complete="<%= task.complete %>" data-id="<%= task.id %>" class="task_container">
   <div class="collapsible-header">
   	<%= task.name %>
   	<div class="switch">
     <label>
-      
-      <input type="checkbox">
+      <input type="checkbox" <%= (task.complete ? 'checked' : '') %>>
       <span class="lever"></span>
       Complete
     </label>

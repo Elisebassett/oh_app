@@ -4,7 +4,7 @@
      <% department.projects.all.each do |project| %>
        <div class="collection">
           <%= link_to project.name, project, class: "collection-item" %>
-           <%= link_to "Delete", project, method: :delete, remote: :true, class: "destroy_project float_right" %>
+          <%= link_to "Delete", project, method: :delete, remote: :true, class: "destroy_project float_right" %>
         </div>
      <% end %>
   </div>
