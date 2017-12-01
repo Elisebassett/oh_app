@@ -22,7 +22,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       @task = Task.find(params[:id]).destroy
       format.js
-      # format.html{redirect_to @projects}
+      format.html{redirect_to @projects}
     end
   end
 
