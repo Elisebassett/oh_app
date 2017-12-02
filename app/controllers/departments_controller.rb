@@ -24,7 +24,6 @@ class DepartmentsController < ApplicationController
 
   def edit
     @department = Department.find(params[:id])
-    redirect_to @department
   end
 
   def update
