@@ -9,6 +9,7 @@ $(document).on('turbolinks:load', function(){
   		type: 'PATCH',
   		data: {complete: $(this).is(':checked')}
   	});
+    user.points = project.points + user.points;
   });
 });
 
