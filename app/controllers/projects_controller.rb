@@ -33,6 +33,8 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    @department = @project.department
+    @users = User.all
   end
 
   def update

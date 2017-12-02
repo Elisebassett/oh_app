@@ -6,7 +6,7 @@
 	</div>
 	<div class="row">
 		<%= form_with model: @project_new, class: "col s12" do |f| %>
-			<%= f.hidden_field :department_id, value: department.id %>
+			<%= f.hidden_field :department_id, value: @department.id %>
 			<%= f.text_field :name, placeholder: :name %>
 			<%= f.text_field :description, placeholder: :description %>
 			<%= f.date_field :deadline, placeholder: :deadline %>
