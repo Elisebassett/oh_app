@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
     @tasks = @project.tasks.all
     @users = User.all
     @department = @project.department
-    
+    @team = @project.users
   end
 
   def edit
@@ -35,13 +35,13 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     @project.update(project_params)
+    @project.users.destroy_all
     @team = @project.users
     user_ids = params[:project][:user_ids]
     user_ids.each do |user_id|
-      if !user_id.blank? 
+      if !user_id.blank?
         @project.users << User.find(user_id)
       else
-      elsif @team.include?(user_id)
       end
     end
     redirect_to @project
