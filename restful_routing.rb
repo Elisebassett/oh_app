@@ -53,4 +53,5 @@ cancel_user_registration GET    /users/cancel(.:format)           users/registra
                user_task GET    /user_tasks/:id(.:format)         user_tasks#show
                          PATCH  /user_tasks/:id(.:format)         user_tasks#update
                          PUT    /user_tasks/:id(.:format)         user_tasks#update
+                         DELETE /user_tasks/:id(.:format)         user_tasks#destroy
                     root GET    /                                 home#index
