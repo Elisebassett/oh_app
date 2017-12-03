@@ -24,10 +24,26 @@
             <span class="card-title">Project Actions</span>
             <br>
             <%= link_to "Create Task", '#new-project-modal', class: "modal-trigger" %> 
+            <br>
+            <%= link_to "Edit Project Team", '#edit_team_modal', class: "modal-trigger" %> 
           </div>
         </div>
       </div> <!-- end of column -->
+      <!--*********** modals *************-->
+      <!-- create task modal -->
       <%= render 'modal' %>
+      <!-- assign team modal -->
+      <div id="edit_team_modal" class="modal">
+        <div class="modal-content">
+          <div class="card-title">Assign Team</div>
+          <%= form_with model: @project do |f| %>
+            
+            
+            <%= f.collection_select(:user_ids, @users, :id, :name, {prompt: true}, {multiple: true}) %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+      </div>
 
       <!-- start of displaying tasks -->
       <div class="col s12 m6">
@@ -56,20 +72,18 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <span class="card-title">Team</span>
-                add validations for manager
-            <p>Manager: <%# user.name %></p>
+            <ul class="collapsible" data-collapsible="accordion">
+              <% @team.each do |user| %>
+                <%= render user %>
+              <% end %>
+          </ul>
           </div>
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title">Employees</span>
+            <span class="card-title">All Employees</span>
             <ul class="collapsible" data-collapsible="accordion">
               <% @users.each do |user| %>
-                <div class="collapsible-header black-text"><%= user.name %>
-                </div>
-                <div class="collapsible-body"><span>
-                  <p>Assign to Department</p>
-                  </span>
-                </div>
+                <%= render user %>
               <% end %>
             </ul>
           </div>

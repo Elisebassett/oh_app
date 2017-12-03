@@ -11,13 +11,7 @@ class ProjectsController < ApplicationController
   def create
     @users = User.all
     @project = Project.create(project_params)
-    user_ids = params[:project][:user_ids]
-    user_ids.each do |user_id|
-      if !user_id.blank? 
-        @project.users << User.find(user_id)
-      else
-      end
-    end
+    assign_users
     if @project.save!
       redirect_to @project
     end
@@ -29,6 +23,7 @@ class ProjectsController < ApplicationController
     @tasks = @project.tasks.all
     @users = User.all
     @department = @project.department
+    
   end
 
   def edit
@@ -40,6 +35,15 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     @project.update(project_params)
+    @team = @project.users
+    user_ids = params[:project][:user_ids]
+    user_ids.each do |user_id|
+      if !user_id.blank? 
+        @project.users << User.find(user_id)
+      else
+      elsif @team.include?(user_id)
+      end
+    end
     redirect_to @project
   end
 
@@ -52,6 +56,16 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def assign_users
+    user_ids = params[:project][:user_ids]
+    user_ids.each do |user_id|
+      if !user_id.blank? 
+        @project.users << User.find(user_id)
+      else
+      end
+    end
+  end
 
   def project_params
     params.require(:project).permit(:department_id, :name, :description, :deadline, :id, :user_ids)
