@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :user_projects, except: [:destroy]
   resources :user_tasks
 
+  patch '/task-complete' => 'tasks#toggle'
+  # custom route for toggling task
+
   root "home#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
