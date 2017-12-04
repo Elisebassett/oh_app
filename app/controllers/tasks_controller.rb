@@ -32,8 +32,24 @@ class TasksController < ApplicationController
 
 # toggle method is run when complete switch is clicked
   def toggle
-    @task = Task.find(params[:id])
-    @task.update(complete: params[:complete])
+    respond_to do |format|
+      #toggle task
+      @task = Task.find(params[:id])
+      @task.update(complete: params[:complete])
+      #add and subtract points from user
+      if params[:complete] == "true"
+        @task.users.each do |user|
+          user.points += @task.points
+          user.save
+        end #loop
+      else
+        @task.users.each do |user|
+          user.points -= @task.points
+          user.save
+        end #loop
+      end #ifelse
+      format.js
+    end #respond_to
   end
 
   private

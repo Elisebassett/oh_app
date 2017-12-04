@@ -9,7 +9,7 @@ class DepartmentsController < ApplicationController
     @department = Department.find(params[:id])
     @projects = @department.projects.all
     @project_new = Project.new
-    @users = User.all
+    @users = @department.users
 
   end
 
