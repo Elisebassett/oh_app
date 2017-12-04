@@ -51,12 +51,8 @@
         <div class="card blue-grey lighten-5">
           <div class="card-content black-text">
             <span class="card-title black-text">Tasks</span>
-            <div class="row">
-                <ul class="collapsible tasks" data-collapsible="accordion">
-                  <% @tasks.each do |task| %>
-                    <%= render task %>
-                  <% end %>
-                </ul>
+            <div class="row tasks_display">
+              <%= render 'tasks/tasks' %>
             </div>
           </div>
         </div>
@@ -65,7 +61,6 @@
       <div class="card blue-grey lighten-5">
         <div class="card-content">
           <span class="card-title black-text">Team Points</span>
-            
         </div>
       </div>
     </div>
