@@ -5,9 +5,10 @@ $(document).on('turbolinks:load', function(){
   	console.log($(this).is(':checked'));
   	var id = $(this).closest('.task_container').attr('data-id');
   	$.ajax({
-  		url: `/tasks/${id}`,
+  		url: `/task-complete`,
   		type: 'PATCH',
-  		data: {complete: $(this).is(':checked')}
+  		data: {complete: $(this).is(':checked'), id: id}
+      // leave this alone plz
   	});
   });
 
@@ -21,8 +22,7 @@ $(document).on('turbolinks:load', function(){
 
   $('.destroy_task_assignment').on('ajax:success', function() {
     $(this).closest('.task_assignment').remove();
-  })
-
+  });
 
 
 

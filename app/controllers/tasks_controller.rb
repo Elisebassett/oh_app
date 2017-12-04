@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   def update
   	respond_to do |format|
 	  	@task = Task.find(params[:id])
-	  	@task.toggle(:complete)
+	  	
       @task.users.destroy_all
       assign_users
 	  	if @task.save!
@@ -28,6 +28,12 @@ class TasksController < ApplicationController
       format.js
       format.html{redirect_to @projects}
     end
+  end
+
+# toggle method is run when complete switch is clicked
+  def toggle
+    @task = Task.find(params[:id])
+    @task.update(complete: params[:complete])
   end
 
   private
