@@ -1,10 +1,11 @@
 class TasksController < ApplicationController
 
-
   def create
-  	@task = Task.new(task_params)
-  		if @task.save
-  		end
+    respond_to do |format|
+      @task = Task.new(task_params)
+      format.html
+      format.js
+  	end
   end
 
   def update
