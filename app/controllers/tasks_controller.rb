@@ -13,12 +13,13 @@ class TasksController < ApplicationController
     @users = User.all
   	respond_to do |format|
 	  	@task = Task.find(params[:id])
+      @project = @task.project
+      @tasks = @project.tasks.all
       @task.update(task_params)
       @task.users.destroy_all
-      assign_users
 	  	if @task.save!
-	  		format.html {redirect_to project_path(project)}
-	  		format.js
+        format.js
+	  		format.html {render project_path(project)}
 	  	end
 	  end
   end
