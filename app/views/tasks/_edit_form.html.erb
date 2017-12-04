@@ -1,5 +1,5 @@
-<div class="container-fluid new_task">
-	<%= form_with model: Task.new do |f| %>
+<div class="container-fluid edit_task">
+	<%= form_with model: @task, method: :update do |f| %>
 		<%= f.hidden_field :project_id, value: @project.id %>
 		<%= f.text_field :name, placeholder: :name %>
 		<%= f.text_field :description, placeholder: :description %>
