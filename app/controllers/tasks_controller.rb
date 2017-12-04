@@ -5,7 +5,8 @@ class TasksController < ApplicationController
     respond_to do |format|
       @task = Task.new(task_params)
       format.js
-      format.html 
+      format.html
+      assign_users
     end
   end
 
@@ -16,7 +17,7 @@ class TasksController < ApplicationController
       @task.users.destroy_all
       assign_users
 	  	if @task.save!
-	  		format.html 
+	  		format.html {redirect_to project_path(project)}
 	  		format.js
 	  	end
 	  end
