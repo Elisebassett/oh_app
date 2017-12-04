@@ -12,7 +12,8 @@ class TasksController < ApplicationController
   def update
   	respond_to do |format|
 	  	@task = Task.find(params[:id])
-	  	@task.toggle(:complete)
+      @task.update(task_params)
+	  	@task.toggle!(:complete)
       @task.users.destroy_all
       assign_users
 	  	if @task.save!

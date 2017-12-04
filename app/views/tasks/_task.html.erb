@@ -27,14 +27,27 @@
 				<%= form_with model: task, remote: :true do |f| %>  
           <p><em>Uncheck team members you would like to remove</em></p>
           <%= f.collection_select(:user_ids, @users, :id, :name, {prompt: true}, {multiple: true}) %>
-          <%= f.submit %>
+          <%= f.submit "Update Team", class: 'btn' %>
         <% end %>
 			</span>
   	</span>
 	</div>
   <div class="card-action">
-      <%= link_to "Edit", edit_task_path(task) %>
+      <%= link_to "Edit", '#modal_task', class: "modal-trigger" %>
       <%= link_to "Delete", task, method: :delete, remote: :true, class: "destroy_task float_right" %>
   </div>
 </li>
+<!-- Edit task modal -->
+<div id="modal_task" class="modal">
+  <div class="modal-content">
+    <%= form_with model: task do |f| %>
+      <%= f.text_field :name, placeholder: :name %>
+      <%= f.text_field :description, placeholder: :description %>
+      <%= f.date_field :deadline, placeholder: :deadline %>
+      <div class="modal-footer">
+        <%= f.submit class: "modal-close" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 

@@ -20,7 +20,6 @@ class ProjectsController < ApplicationController
   def show
     @projects = Project.all
     @project = Project.find(params[:id])
-    # @task = Task.find(params[:id])
     @tasks = @project.tasks.all
     @users = User.all
     @department = @project.department
