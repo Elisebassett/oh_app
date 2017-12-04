@@ -11,13 +11,7 @@ class ProjectsController < ApplicationController
   def create
     @users = User.all
     @project = Project.create(project_params)
-    user_ids = params[:project][:user_ids]
-    user_ids.each do |user_id|
-      if !user_id.blank? 
-        @project.users << User.find(user_id)
-      else
-      end
-    end
+    assign_users
     if @project.save!
       redirect_to @project
     end
@@ -26,21 +20,32 @@ class ProjectsController < ApplicationController
   def show
     @projects = Project.all
     @project = Project.find(params[:id])
+    # @task = Task.find(params[:id])
     @tasks = @project.tasks.all
     @users = User.all
-    @assign_to_project = UserProject.new
     @department = @project.department
+    @team = @project.users
   end
 
   def edit
     @project = Project.find(params[:id])
+    @department = @project.department
+    @users = User.all
   end
 
   def update
     @project = Project.find(params[:id])
-   
     @project.update(project_params)
-    redirect_to @projects 
+    @project.users.destroy_all
+    @team = @project.users
+    user_ids = params[:project][:user_ids]
+    user_ids.each do |user_id|
+      if !user_id.blank?
+        @project.users << User.find(user_id)
+      else
+      end
+    end
+    redirect_to @project
   end
 
   def destroy
@@ -52,6 +57,16 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def assign_users
+    user_ids = params[:project][:user_ids]
+    user_ids.each do |user_id|
+      if !user_id.blank? 
+        @project.users << User.find(user_id)
+      else
+      end
+    end
+  end
 
   def project_params
     params.require(:project).permit(:department_id, :name, :description, :deadline, :id, :user_ids)

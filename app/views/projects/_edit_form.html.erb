@@ -1,11 +1,11 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col">
-			<h4>New Project</h4>
+			<h4>Edit Project</h4>
 		</div>
 	</div>
 	<div class="row">
-		<%= form_with model: @project_new, class: "col s12" do |f| %>
+		<%= form_with model: @project, class: "col s12", method: :put do |f| %>
 			<%= f.hidden_field :department_id, value: @department.id %>
 			<%= f.text_field :name, placeholder: :name %>
 			<%= f.text_field :description, placeholder: :description %>
@@ -17,4 +17,3 @@
 		<% end %>
 	</div>
 </div>
-

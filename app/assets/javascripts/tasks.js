@@ -10,14 +10,20 @@ $(document).on('turbolinks:load', function(){
   		data: {complete: $(this).is(':checked')}
   	});
   });
-});
 
-$(document).on ('turbolinks:load', function (){
 	$('.destroy_task').on('ajax:success', function(){
-		$(this).closest('.task').remove()
+		$(this).closest('.task').remove();
 		$('.' + window.task_container).remove(); 
 	});
 	$('.destroy_task').on('click', function(){
 		window.task_container = $(this).closest('.task').attr('class').split(' ')[2];
 	}); 
+
+  $('.destroy_task_assignment').on('ajax:success', function() {
+    $(this).closest('.task_assignment').remove();
+  })
+
+
+
+
 });

@@ -5,3 +5,7 @@
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
 	margin-right: 0px !important;
 }
+
+.collection a.collection-item:hover {
+	background-color: rgb(3, 155, 229) !important;
+}

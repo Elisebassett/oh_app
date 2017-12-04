@@ -12,9 +12,24 @@
 		</div>
 	</div>
   <div class="collapsible-body">
-  	<span>
-    	<p><%= task.description %></p>
-    	<p><%= task.deadline %></p>
+  	<span class="row">
+  		<div class="col s6">
+  		    	<p><%= task.description %></p>
+  		    	<p><%= task.deadline %></p>
+  		</div>
+  		<span class="col s6">
+  			<% task.task_users.each do |assignment| %>
+  				<p class="task_assignment"><%= assignment.user.name %><%= link_to " Remove", user_task_path(assignment), method: :delete, remote: :true, class: 'destroy_task_assignment' %></p>
+  			<% end %>
+  		</span>
+			<span class="col 12">
+				<p><strong>Assign Users To Task</strong></p>
+				<%= form_with model: task, remote: :true do |f| %>  
+          <p><em>Uncheck team members you would like to remove</em></p>
+          <%= f.collection_select(:user_ids, @users, :id, :name, {prompt: true}, {multiple: true}) %>
+          <%= f.submit %>
+        <% end %>
+			</span>
   	</span>
 	</div>
   <div class="card-action">

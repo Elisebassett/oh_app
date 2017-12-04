@@ -17,3 +17,16 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "materialize/components/color";
 @import "materialize";
+
+
+nav {
+	background-color: #4d5161;
+	img {
+		height: 86px;
+	}
+}
+
+.browser-height {
+	height: 100vh;
+	background-color: pink;
+}

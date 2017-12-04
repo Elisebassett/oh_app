@@ -1,19 +1,23 @@
 class TasksController < ApplicationController
 
   def create
-    respond_to do |format|
+  	respond_to do |format|
       @task = Task.new(task_params)
-      format.html
+      # @users = User.all
+      assign_users
       format.js
-  	end
+      format.html
+    end
   end
 
   def update
   	respond_to do |format|
 	  	@task = Task.find(params[:id])
 	  	@task.toggle!(:complete)
+      @task.users.destroy_all
+      assign_users
 	  	if @task.save!
-	  		format.html 
+	  		format.html {redirect_to project_path(project)}
 	  		format.js
 	  	end
 	  end
@@ -29,7 +33,19 @@ class TasksController < ApplicationController
 
   private
 
+  def assign_users
+    user_ids = params[:task][:user_ids]
+    user_ids.each do |user_id|
+      if !user_id.blank? 
+        @task.users << User.find(user_id)
+      else
+      end
+      if @task.save
+      end
+    end
+  end
+
   def task_params
-    params.require(:task).permit(:project_id, :name, :description, :deadline, :complete, :task_id, :points)
+    params.require(:task).permit(:project_id, :name, :description, :deadline, :complete, :task_id, :points, :user_ids)
   end
 end
