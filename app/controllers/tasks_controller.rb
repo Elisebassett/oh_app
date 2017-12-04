@@ -10,11 +10,12 @@ class TasksController < ApplicationController
   	respond_to do |format|
 	  	@task = Task.find(params[:id])
 	  	@task.toggle!(:complete)
+      @task.users.destroy_all
+      assign_users
 	  	if @task.save!
 	  		format.html 
 	  		format.js
 	  	end
-      assign_users
 	  end
   end
 
