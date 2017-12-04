@@ -13,7 +13,7 @@ class TasksController < ApplicationController
       @task.users.destroy_all
       assign_users
 	  	if @task.save!
-	  		format.html 
+	  		format.html {redirect_to project_path(project)}
 	  		format.js
 	  	end
 	  end
