@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid new_task">
 	<%= form_with model: Task.new do |f| %>
 		<%= f.hidden_field :project_id, value: @project.id %>
 		<%= f.text_field :name, placeholder: :name %>
