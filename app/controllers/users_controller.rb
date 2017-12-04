@@ -3,7 +3,7 @@ class UsersController < ApplicationController
    @user = User.find(params[:id])
    @projects = @user.projects
    @tasks = Task.all
-   # @tasks = @user.tasks
+   @tasks = @user.tasks
    @users = User.all
   end
 

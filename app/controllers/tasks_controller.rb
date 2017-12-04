@@ -2,8 +2,12 @@ class TasksController < ApplicationController
 
 
   def create
-  	@task = Task.new(task_params)
-    assign_users
+  	respond_to do |format|
+      @task = Task.new(task_params)
+      # @users = User.all
+      assign_users
+      format.js
+    end
   end
 
   def update
