@@ -21,9 +21,9 @@ $(document).on('turbolinks:load', function(){
 
   $('.destroy_task_assignment').on('ajax:success', function() {
     $(this).closest('.task_assignment').remove();
-  })
+  });
 
-
-
+  $('.update_team').on('submit', function(){
+  });
 
 });
