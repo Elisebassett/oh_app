@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function(){
   $('.destroy_task_assignment').on('ajax:success', function() {
     $(this).closest('.task_assignment').remove();
   });
-
-   // gets the index of the li
-
+   // gets the index of the li  
+  $('.update_team').on('submit', function(){
+  });
 });

@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129205413) do
+ActiveRecord::Schema.define(version: 20171204211920) do
 
   create_table "departments", force: :cascade do |t|
     t.string "name"
-    t.integer "points"
+    t.integer "points", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20171129205413) do
     t.string "name"
     t.string "description"
     t.date "deadline"
-    t.integer "bonus_points"
+    t.integer "bonus_points", default: 25
     t.boolean "completed"
     t.integer "department_id"
     t.datetime "created_at", null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20171129205413) do
     t.integer "project_id"
     t.boolean "complete"
     t.date "deadline"
-    t.integer "points"
+    t.integer "points", default: 5
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20171129205413) do
     t.string "occupation"
     t.integer "department_id"
     t.string "role"
-    t.integer "points"
+    t.integer "points", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_file_name"
