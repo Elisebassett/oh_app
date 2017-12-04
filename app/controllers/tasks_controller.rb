@@ -10,6 +10,7 @@ class TasksController < ApplicationController
   end
 
   def update
+    @users = User.all
   	respond_to do |format|
 	  	@task = Task.find(params[:id])
       @task.update(task_params)

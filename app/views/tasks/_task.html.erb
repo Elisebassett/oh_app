@@ -1,6 +1,6 @@
 <!-- this must be wrapped in: <ul class="collapsible" data-collapsible="accordion"></ul> -->
 <!-- task-<task.id > must stay in third class position -->
-<li id="task-<%= task.id %>" data-complete="<%= task.complete %>" data-id="<%= task.id %>" class="task task_container task-<%= task.id %>">
+<li id="task-<%= task.id %>" data-complete="<%= task.complete %>" data-id="<%= task.id %>" class="task task_container task-<%= task.id %> ">
 	<div class="collapsible-header">
 		<%= task.name %>
 		<div class="switch">
@@ -24,7 +24,7 @@
   		</span>
 			<span class="col 12">
 				<p><strong>Assign Users To Task</strong></p>
-				<%= form_with model: task, remote: :true do |f| %>  
+				<%= form_with model: task, class: "update_team" do |f| %>  
           <p><em>Uncheck team members you would like to remove</em></p>
           <%= f.collection_select(:user_ids, @users, :id, :name, {prompt: true}, {multiple: true}) %>
           <%= f.submit "Update Team", class: 'btn' %>
