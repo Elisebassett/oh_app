@@ -1,19 +1,18 @@
 class TasksController < ApplicationController
 
   def create
-  	respond_to do |format|
+    respond_to do |format|
       @task = Task.new(task_params)
-      # @users = User.all
-      assign_users
       format.js
       format.html
+      assign_users
     end
   end
 
   def update
   	respond_to do |format|
 	  	@task = Task.find(params[:id])
-	  	@task.toggle!(:complete)
+	  	@task.toggle(:complete)
       @task.users.destroy_all
       assign_users
 	  	if @task.save!
