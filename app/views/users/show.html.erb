@@ -13,8 +13,11 @@
           <span class="card-title">Welcome <%= @user.first_name %></span>
           <p><%= @user.email %></p>
           <p><%= @user.occupation %></p>
-          <p><%= @user.department.name %></p>
-          <p><%= @user.points %></p>
+          <% if @user.department %>
+            <h5>My Department</h5>
+            <%= link_to @user.department.name, department_path(@user.department) %>
+            <p><%=  %></p>
+          <% end %>
         </div>
         <div class="card-action">
           <%= link_to "Edit account", edit_user_registration_path %>
@@ -36,11 +39,11 @@
       </div>
     </div>
   <!-- Collumn 3 - my tasks. Should loop through every task that belongs to that person -->
+    <!-- Person's points!! -->
     <div class="col s12 m3">
       <div class="card blue-grey lighten-5">
-        <div class="card-content">
-          <span class="card-title dark-text">My Points</span>
-            <progress value="#{current_user.points}" max="100">
+        <div class="card-content" id="points_display">
+          <%= render 'users/points' %>
         </div>
       </div>
     </div>

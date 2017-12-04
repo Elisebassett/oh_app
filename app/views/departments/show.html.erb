@@ -37,24 +37,25 @@
       </div>
     </div>
   </div>
-  <!-- collumn 3- should loop through and show every employee that belongs to this department -->
+  <!-- collumn 3- should loop through and show every employee that belongs to this department as well as show team points -->
+  <!-- Team points -->
+  <div class="col s12 m3">
+    <div class="card blue-grey lighten-5">
+      <div class="card-content">
+        <span class="card-title black-text">Team Points</span>
+          
+      </div>
+    </div>
+  </div>
+  <!-- team -->
   <div class="col s12 m3">
     <div class="card blue-grey lighten-5">
       <div class="card-content black-text">
         <span class="card-title">Team</span>
-        <p>Department Manager</p>
+        <% @users.each do |user| %>
+          <%= render user %>  <!-- current push -->
+        <% end %>
       </div>
-      <div class="card blue-grey lighten-5">
-        <div class="card-content black-text">
-          <span class="card-title">Employees</span>
-          <ul class="collapsible" data-collapsible="accordion">
-          <!-- loop through all employees -->
-           <% @users.each do |user| %>
-              <%= render user %>  <!-- current push -->
-            <% end %>
-          </ul>
-        </div>
-      </div>  
     </div>
   </div>
 </div>
