@@ -12,15 +12,15 @@ $(document).on('turbolinks:load', function(){
   	});
   });
 
-	$('.destroy_task').on('ajax:success', function(){
+	$(document).on('ajax:success', '.destroy_task', function(){
 		$(this).closest('.task').remove();
 		$('.' + window.task_container).remove(); 
 	});
-	$('.destroy_task').on('click', function(){
+	$(document).on('click', '.destroy_task', function(){
 		window.task_container = $(this).closest('.task').attr('class').split(' ')[2];
 	}); 
 
-  $('.destroy_task_assignment').on('ajax:success', function() {
+  $(document).on('ajax:success', '.destroy_task_assignment', function() {
     $(this).closest('.task_assignment').remove();
   });
    // gets the index of the li  
