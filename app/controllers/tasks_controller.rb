@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   def create
     respond_to do |format|
       @task = Task.new(task_params)
+      @users = User.all
       format.js
       format.html
       assign_users
@@ -17,6 +18,7 @@ class TasksController < ApplicationController
       @tasks = @project.tasks.all
       @task.update(task_params)
       @task.users.destroy_all
+      assign_users
 	  	if @task.save!
         format.js
 	  		format.html {render project_path(project)}
