@@ -1,4 +1,7 @@
-<%= form_with model: @department do |f| %>
-	<%= f.text_field :name, placeholder: :name %>
-	<%= f.submit %>
-<% end %>
+<div class="container">
+	<h1>New Department</h1>
+	<%= form_with model: @department do |f| %>
+		<%= f.text_field :name, placeholder: "Department Name" %>
+		<%= f.submit "Create Department", class: "btn" %>
+	<% end %>
+</div>

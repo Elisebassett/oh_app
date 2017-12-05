@@ -3,6 +3,10 @@
 	  <%= user.name %>
 	</div>
 	<div class="collapsible-body">
-	  
+	  <p><strong>Role: </strong><%= user.role %></p>
+	  <% if user.department %>
+		  <p><strong>Department: </strong> <%= user.department.name %></p>
+	  <% end %>
+	  <p><strong>Points: </strong><%= user.points %></p>
 	</div>
 </li>

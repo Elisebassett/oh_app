@@ -52,9 +52,11 @@
     <div class="card blue-grey lighten-5">
       <div class="card-content black-text">
         <span class="card-title">Team</span>
-        <% @users.each do |user| %>
-          <%= render user %>  <!-- current push -->
-        <% end %>
+        <ul class="collapsible" data-collapsible="accordion">
+          <% @users.each do |user| %>
+            <%= render user %>  <!-- current push -->
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>

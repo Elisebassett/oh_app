@@ -17,6 +17,7 @@ class TasksController < ApplicationController
       @tasks = @project.tasks.all
       @task.update(task_params)
       @task.users.destroy_all
+      assign_users
 	  	if @task.save!
         format.js
 	  		format.html {render project_path(project)}

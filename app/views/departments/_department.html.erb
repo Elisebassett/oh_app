@@ -3,12 +3,14 @@
     <span class="card-title">
       <%= link_to department.name, department_path(department), class: "collection-item department-#{department.id} " %>
       </span>
-     <% department.projects.all.each do |project| %>
-       <div class="collection">
-          <%= link_to project.name, project, class: "collection-item" %>
-          <%= link_to "Delete", project, method: :delete, remote: :true, class: "destroy_project float_right" %>
-        </div>
-     <% end %>
+     <div class="project-container">
+      <% department.projects.all.each do |project| %>
+         <div class="collection">
+            <%= link_to project.name, project, class: "collection-item" %>
+            <%= link_to "Delete", project, method: :delete, remote: :true, class: "destroy_project float_right" %>
+          </div>
+       <% end %>
+     </div>
   </div>
   <div class="card-action">
     <%= link_to "Edit", edit_department_path(department) %>

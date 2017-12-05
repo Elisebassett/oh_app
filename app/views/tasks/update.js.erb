@@ -1,39 +1,5 @@
-
-  // var index = $(this).closest('.task').index(); // gets the index of the li
-  // // the element to be inserted
-  // $task = $(`<% j render @task %>`);
-  // if (index == 0){ 
-  //   // prepend the element to be added
-  //   $('.tasks').prepend($task); 
-  //   // remove first element (index == 0)
-  //   $('.tasks').children('.task').eq(index+1).remove();
-  // }else {
-  //   // remove element at the indicated index
-  //   $('.tasks').children('.task').eq(index).remove();
-  //   // add the element at the indicated index
-  //   $task.insertAfter($('.tasks').children('.task').eq(index-1));
-  // }
-
-var index = window.task_index
-  // the element to be inserted
-  console.log(index);
-  $task = $("<%= j render @task %>");
-  console.log('task:');
-  console.log($task);
-  if (index == 0){ 
-    // prepend the element to be added
-    $('.tasks').prepend($task); 
-    // remove first element (index == 0)
-    children = $('.tasks').children('li'); 
-    $('.tasks').children().eq(index+1).remove();
-  }else {
-    // remove element at the indicated index
-    $('.tasks').children().eq(index).remove();
-    // add the element at the indicated index
-    $task.insertAfter($('.tasks').children().eq(index-1));
-  };
-   
-  $('.tasks_display').html("<%= j render 'tasks/tasks' %>");
+$('.tasks_display').html("<%= j render 'tasks/tasks' %>");
+$('.collapsible').collapsible();
 
 
  

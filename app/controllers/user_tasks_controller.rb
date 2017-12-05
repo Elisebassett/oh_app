@@ -1,5 +1,6 @@
 class UserTasksController < ApplicationController
   def create
+  	
   end
 
   def destroy
