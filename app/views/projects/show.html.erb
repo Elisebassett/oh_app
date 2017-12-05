@@ -15,7 +15,8 @@
             <p><%= @project.deadline %></p>
             <br>
             <%= link_to "Edit Project", edit_project_path(@project) %>
-             <%= link_to "Delete", @project, method: :delete, class: "destroy_project" %>
+            <br>
+             <%= link_to "Delete Project", @project, method: :delete, class: "destroy_project" %>
           </div>
           <div class="card-action">
             <span class="card-title">Department</span>
