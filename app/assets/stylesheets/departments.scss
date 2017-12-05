@@ -2,10 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$slate: #4d5161;
+$blue: rgb(3, 155, 229);
+
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
 	margin-right: 0px !important;
 }
 
 .collection a.collection-item:hover {
-	background-color: rgb(3, 155, 229) !important;
+	background-color: $blue !important;
+	color: white !important;
+}
+
+.collection a.collection-item {
+	color: $slate !important;
+}
+
+.project-container {
+	height: 200px;
+	overflow: scroll;
 }

@@ -18,9 +18,11 @@
 @import "materialize/components/color";
 @import "materialize";
 
+$slate: #4d5161;
+$blue: rgb(3, 155, 229);
 
 nav {
-	background-color: #4d5161;
+	background-color: $slate;
 	img {
 		height: 86px;
 	}
