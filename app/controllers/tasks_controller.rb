@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   def create
     respond_to do |format|
       @task = Task.new(task_params)
+      @users = User.all
       format.js
       format.html
       assign_users
