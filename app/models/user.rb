@@ -15,8 +15,6 @@ class User < ApplicationRecord
   has_many :user_projects, dependent: :destroy
   has_many :projects, through: :user_projects
 
-  belongs_to :department, optional: :true
-
   def name
     self.first_name + " " + self.last_name
   end
