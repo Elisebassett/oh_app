@@ -23,10 +23,11 @@ $blue: rgb(3, 155, 229);
 
 .nav {
 	background-color: $slate;
-  .img {
-	height: 86px;
-   }
 }
+
+img {
+	height: 86px;
+ }
 
 .browser-height {
 	height: 100vh;
